@@ -16,8 +16,9 @@ public class ItemOffer {
     private double affectedItemDiscountPercent;
 
     public boolean isApplicable(Map.Entry<String, BasketItemProps> boughtProduct, Basket basket) {
-        if ((isEnoughForOffer(boughtProduct.getValue().getQuantity())) ||
-                (isDiffProductDiscount(boughtProduct.getKey()) && isDiscountedProductInBasket(affectedItem, basket))) {
+        if ((isEnoughForOffer(boughtProduct.getValue().getQuantity())) &&
+                (isSameProductDiscount(boughtProduct.getKey()) || (isDiffProductDiscount(boughtProduct.getKey()) &&
+                        isDiscountedProductInBasket(affectedItem, basket)))) {
             return true;
         }
         return false;
@@ -25,6 +26,10 @@ public class ItemOffer {
 
     private boolean isDiscountedProductInBasket(String affectedItem, Basket basket) {
         return basket.getBasketItems().get(affectedItem) != null;
+    }
+
+    private boolean isSameProductDiscount(String boughtProductName) {
+        return boughtProductName.equals(affectedItem);
     }
 
     private boolean isDiffProductDiscount(String boughtProductName) {
