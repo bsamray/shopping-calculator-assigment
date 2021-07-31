@@ -5,6 +5,7 @@ import com.assignment.shopping.model.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class TestUtils {
 
@@ -15,6 +16,59 @@ public class TestUtils {
         String[] purchasedItemNames = new String[] {"Apples", "Milk", "Bread"};
         Basket basket = new Basket();
         basket.populateBasket(purchasedItemNames, buildInventory());
+        return basket;
+    }
+
+    public static Basket buildBasketWithNoOffers() {
+        Basket basket = new Basket();
+        BasketItemProps applesProps = BasketItemProps.builder()
+                .quantity(2)
+                .unitPrice(100)
+                .discountedPercentage(0)
+                .discount(0)
+                .build();
+        BasketItemProps milkProps = BasketItemProps.builder()
+                .quantity(1)
+                .unitPrice(130)
+                .discountedPercentage(0)
+                .discount(0)
+                .build();
+        BasketItemProps breadProps = BasketItemProps.builder()
+                .quantity(1)
+                .unitPrice(80)
+                .discountedPercentage(0)
+                .discount(0)
+                .build();
+        basket.setBasketItems(Map.of("Apples", applesProps, "Milk", milkProps, "Bread", breadProps));
+        return basket;
+    }
+
+    public static Basket buildBasketWithOffersApplied() {
+        Basket basket = new Basket();
+        BasketItemProps applesProps = BasketItemProps.builder()
+                .quantity(1)
+                .unitPrice(100)
+                .discountedPercentage(10)
+                .discount(10)
+                .build();
+        BasketItemProps milkProps = BasketItemProps.builder()
+                .quantity(1)
+                .unitPrice(130)
+                .discountedPercentage(0)
+                .discount(0)
+                .build();
+        BasketItemProps breadProps = BasketItemProps.builder()
+                .quantity(3)
+                .unitPrice(80)
+                .discountedPercentage(50)
+                .discount(80)
+                .build();
+        Map<String, BasketItemProps> basketItems = new TreeMap<>();
+        basketItems.put("Apples", applesProps);
+        basketItems.put("Milk", milkProps);
+        basketItems.put("Bread", breadProps);
+        basket.setBasketItems(Map.of("Apples", applesProps, "Milk", milkProps, "Bread", breadProps));
+        basket.setBasketItems(basketItems);
         return basket;
     }
 

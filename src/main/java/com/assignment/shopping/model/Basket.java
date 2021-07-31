@@ -1,14 +1,14 @@
 package com.assignment.shopping.model;
 
-import lombok.Getter;
+import lombok.Data;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-@Getter
+@Data
 public class Basket {
 
-    private Map<String, BasketItemProps> basketItems = new HashMap<>();
+    private Map<String, BasketItemProps> basketItems = new TreeMap<>();
 
     public void populateBasket(String[] itemNames, Inventory inventory) {
         for (String itemName : itemNames) {
