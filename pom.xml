@@ -17,6 +17,7 @@
         <logback.version>1.2.3</logback.version>
         <slf4j.version>1.7.32</slf4j.version>
         <maven.dependency.plugin.version>3.2.0</maven.dependency.plugin.version>
+        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
     </properties>
 
     <dependencies>
@@ -60,7 +61,7 @@
 
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3</version>
+                <version>${maven.jar.plugin.version}</version>
                 <configuration>
                     <archive>
                         <manifest>
