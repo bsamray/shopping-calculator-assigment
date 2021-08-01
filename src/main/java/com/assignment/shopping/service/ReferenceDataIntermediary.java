@@ -6,7 +6,6 @@ import com.assignment.shopping.model.ConsolidatedOffer;
 import com.assignment.shopping.model.Inventory;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class ReferenceDataIntermediary implements ReferenceDataCollector {
 
     private static final String INVENTORY_LOAD_ERROR_MSG = "Error while reading inventory data";
@@ -19,7 +18,6 @@ public class ReferenceDataIntermediary implements ReferenceDataCollector {
         try {
             inventory.setInventoryItems(stockInitialiser.getStock());
         } catch (Exception e) {
-            log.error(INVENTORY_LOAD_ERROR_MSG);
             throw new InventoryLoadException(INVENTORY_LOAD_ERROR_MSG);
         }
         return inventory;
@@ -32,7 +30,6 @@ public class ReferenceDataIntermediary implements ReferenceDataCollector {
         try {
             consolidatedOffer.consolidateOffers(offerInitialiser.getOffers());
         } catch (Exception e) {
-            log.error(OFFERS_LOAD_ERROR_MSG);
             throw new OfferLoadException(OFFERS_LOAD_ERROR_MSG);
         }
         return consolidatedOffer;

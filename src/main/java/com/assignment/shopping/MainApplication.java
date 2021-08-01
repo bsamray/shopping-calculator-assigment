@@ -1,14 +1,10 @@
 package com.assignment.shopping;
 
-import com.assignment.shopping.exception.InventoryLoadException;
-import com.assignment.shopping.exception.OfferLoadException;
 import com.assignment.shopping.model.Basket;
 import com.assignment.shopping.model.ConsolidatedOffer;
 import com.assignment.shopping.model.Inventory;
 import com.assignment.shopping.service.*;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class MainApplication {
 
     private static final String INVENTORY_SOURCE = "src/main/resources/inventory.csv";

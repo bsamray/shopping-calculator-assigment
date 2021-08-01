@@ -1,1 +1,11 @@
-/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/PriceChartLoaderTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/CalculatorTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/util/UtilsTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/model/BasketTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/model/ConsolidatedOfferTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/OfferInitialiserTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/ReferenceDataCollectorTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/MainApplicationTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/StockInitialiserTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/model/ItemOfferTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/service/OfferHandlerTest.java
+/Users/bss/Downloads/codingassignment/src/test/java/com/assignment/shopping/testutil/TestUtils.java

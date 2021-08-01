@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 
-@Slf4j
 public class BasketOfferApplier implements OfferHandler {
 
     @Override
@@ -18,8 +17,6 @@ public class BasketOfferApplier implements OfferHandler {
             ItemOffer itemOffer = allOffers.getCurOffers().get(basketItem.getKey());
             if (itemOffer != null && itemOffer.isApplicable(basketItem, basket)) {
                 applyOffer(basket, itemOffer);
-            } else {
-                log.debug("No discount found for item ({})", basketItem.getKey());
             }
         }
 
