@@ -3,29 +3,30 @@ package com.assignment.shopping.service;
 import com.assignment.shopping.model.SourcedOfferEntry;
 import com.opencsv.bean.CsvToBeanBuilder;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class CsvOfferInitialiser implements OfferInitialiser {
 
-    private String offersFilePath;
+    private String offersFile;
 
-    public CsvOfferInitialiser(String offersFilePath) {
-        this.offersFilePath = offersFilePath;
+    public CsvOfferInitialiser(String offersFile) {
+        this.offersFile = offersFile;
     }
 
     /**
      * Reads offer reference dat
      * @return List of Offers POJO SourcedOfferEntry
-     * @throws IOException
      */
     @Override
     @SuppressWarnings("unchecked")
-    public List<SourcedOfferEntry> getOffers() throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(offersFilePath));
+    public List<SourcedOfferEntry> getOffers() {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(offersFile);
+        InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(streamReader);
         return new CsvToBeanBuilder(reader)
                 .withType(SourcedOfferEntry .class).withIgnoreLeadingWhiteSpace(true).build().parse();
     }

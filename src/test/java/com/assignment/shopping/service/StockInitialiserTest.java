@@ -2,7 +2,6 @@ package com.assignment.shopping.service;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,8 +11,8 @@ public class StockInitialiserTest {
     private StockInitialiser stockInitialiser;
 
     @Test
-    public void testPriceChartLoadsWithValidFile() throws IOException {
-        stockInitialiser = new CsvStockInitialiser("src/test/resources/inventory_good.csv");
+    public void testPriceChartLoadsWithValidFile() {
+        stockInitialiser = new CsvStockInitialiser("inventory_good.csv");
 
         List items = stockInitialiser.getStock();
 
@@ -22,8 +21,8 @@ public class StockInitialiserTest {
     }
 
     @Test
-    public void testPriceChartLoadErrorsWhenBadFile() throws IOException {
-        stockInitialiser = new CsvStockInitialiser("src/test/resources/inventory_bad.csv");
+    public void testPriceChartLoadErrorsWhenBadFile() {
+        stockInitialiser = new CsvStockInitialiser("inventory_bad.csv");
 
         assertThrows(RuntimeException.class, () -> stockInitialiser.getStock());
     }

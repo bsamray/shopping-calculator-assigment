@@ -10,8 +10,8 @@ import com.assignment.shopping.service.*;
  */
 public class MainApplication {
 
-    private static final String INVENTORY_SOURCE = "src/main/resources/inventory.csv";
-    private static final String OFFER_SOURCE = "src/main/resources/inventory.csv";
+    private static final String INVENTORY_SOURCE = "inventory.csv";
+    private static final String OFFER_SOURCE = "offers.csv";
 
     /**
      * The main method that starts the processing

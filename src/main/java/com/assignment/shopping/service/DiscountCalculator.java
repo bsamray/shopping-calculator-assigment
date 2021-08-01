@@ -41,6 +41,7 @@ public class DiscountCalculator implements Calculator {
             }
         }
         StringBuilder finalSb = new StringBuilder();
+        finalSb.append(SEPARATE_LINE_BY);
         finalSb.append("Subtotal: ")
                 .append(Currency.getInstance(locale).getSymbol())
                 .append(String.format("%.2f", subTotal/Math.pow(10, Currency.getInstance(locale).getDefaultFractionDigits())));

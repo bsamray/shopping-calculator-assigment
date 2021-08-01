@@ -15,7 +15,7 @@ public class CalculatorTest {
 
         String discountInfo = calculator.getDiscountInfo(basket);
 
-        assertEquals("Subtotal: £4.10\n(no offers available)\nTotal: £4.10", discountInfo);
+        assertEquals("\nSubtotal: £4.10\n(no offers available)\nTotal: £4.10", discountInfo);
     }
 
     @Test
@@ -25,6 +25,6 @@ public class CalculatorTest {
 
         String discountInfo = calculator.getDiscountInfo(basket);
 
-        assertEquals("Subtotal: £4.70\nApples 10% off: -10p\nBread 50% off: -80p\nTotal: £3.80", discountInfo);
+        assertEquals("\nSubtotal: £4.70\nApples 10% off: -10p\nBread 50% off: -80p\nTotal: £3.80", discountInfo);
     }
 }

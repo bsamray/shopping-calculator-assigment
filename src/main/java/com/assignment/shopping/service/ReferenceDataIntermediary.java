@@ -24,6 +24,7 @@ public class ReferenceDataIntermediary implements ReferenceDataCollector {
         try {
             inventory.setInventoryItems(stockInitialiser.getStock());
         } catch (Exception e) {
+            e.printStackTrace();
             log.error(INVENTORY_LOAD_ERROR_MSG);
             throw new InventoryLoadException(INVENTORY_LOAD_ERROR_MSG);
         }
@@ -42,7 +43,7 @@ public class ReferenceDataIntermediary implements ReferenceDataCollector {
         try {
             consolidatedOffer.consolidateOffers(offerInitialiser.getOffers());
         } catch (Exception e) {
-            log.error(INVENTORY_LOAD_ERROR_MSG);
+            log.error(OFFERS_LOAD_ERROR_MSG);
             throw new OfferLoadException(OFFERS_LOAD_ERROR_MSG);
         }
         return consolidatedOffer;
