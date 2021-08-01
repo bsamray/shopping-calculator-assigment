@@ -14,6 +14,11 @@ public class DiscountCalculator implements Calculator {
     private static final Locale locale  = Locale.getDefault();
     private static final String SEPARATE_LINE_BY = System.lineSeparator();
 
+    /**
+     * Calculates discount and returns as text
+     * @param basket
+     * @return Returns Discount information
+     */
     @Override
     public String getDiscountInfo(Basket basket) {
         StringBuilder sb = new StringBuilder();

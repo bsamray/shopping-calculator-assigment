@@ -17,6 +17,11 @@ public class CsvOfferInitialiser implements OfferInitialiser {
         this.offersFilePath = offersFilePath;
     }
 
+    /**
+     * Reads offer reference dat
+     * @return List of Offers POJO SourcedOfferEntry
+     * @throws IOException
+     */
     @Override
     @SuppressWarnings("unchecked")
     public List<SourcedOfferEntry> getOffers() throws IOException {

@@ -8,8 +8,15 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 
+@Slf4j
 public class BasketOfferApplier implements OfferHandler {
 
+    /**
+     * Populates basket items along with applicable discounts
+     * @param basket Basket without offers consideration
+     * @param allOffers Offers to be examined
+     * @return Basket populated with offers
+     */
     @Override
     public Basket applyOffers(Basket basket, ConsolidatedOffer allOffers) {
         for (Map.Entry<String, BasketItemProps> basketItem : basket.getBasketItems().entrySet()) {
@@ -17,6 +24,8 @@ public class BasketOfferApplier implements OfferHandler {
             ItemOffer itemOffer = allOffers.getCurOffers().get(basketItem.getKey());
             if (itemOffer != null && itemOffer.isApplicable(basketItem, basket)) {
                 applyOffer(basket, itemOffer);
+            } else {
+                log.debug("No discount found for item ({})", basketItem.getKey());
             }
         }
 

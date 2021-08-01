@@ -17,6 +17,11 @@ public class CsvStockInitialiser implements StockInitialiser {
         this.inventorySource = pathToFile;
     }
 
+    /**
+     * Reads inventory reference dat
+     * @return List of InventoryItems
+     * @throws IOException
+     */
     @Override
     @SuppressWarnings("unchecked")
     public List<InventoryItem> getStock() throws IOException {

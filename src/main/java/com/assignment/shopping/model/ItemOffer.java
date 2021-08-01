@@ -15,6 +15,12 @@ public class ItemOffer {
 
     private double affectedItemDiscountPercent;
 
+    /**
+     * Examines if current offer applies to a basket
+     * @param boughtProduct
+     * @param basket
+     * @return Boolean if discount is applicable
+     */
     public boolean isApplicable(Map.Entry<String, BasketItemProps> boughtProduct, Basket basket) {
         if ((isEnoughForOffer(boughtProduct.getValue().getQuantity())) &&
                 (isSameProductDiscount(boughtProduct.getKey()) || (isDiffProductDiscount(boughtProduct.getKey()) &&

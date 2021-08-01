@@ -13,6 +13,10 @@ public class ConsolidatedOffer {
     private final String DUPLICATE_ITEM_OFFER_FOUND = "Duplicate offer entry for an item detected";
     private Map<String, ItemOffer> curOffers = new HashMap<>();
 
+    /**
+     *
+     * @param offerEntries
+     */
     public void consolidateOffers(List<SourcedOfferEntry> offerEntries) {
         for (SourcedOfferEntry offerEntry : offerEntries) {
             String itemName = offerEntry.getForItem();
